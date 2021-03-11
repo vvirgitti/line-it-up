@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Button from './components/Button';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
@@ -18,6 +19,7 @@ export default function App() {
           <Text style={{color: '#E6C269', fontSize: 40, fontWeight: 'bold', marginTop: 40}}>
             Line It Up
           </Text>
+          <Button text="Add players"/>
         </View>
       </SafeAreaProvider>
     );
@@ -29,5 +31,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#375A87',
     alignItems: 'center',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#fff'
   }
 })
