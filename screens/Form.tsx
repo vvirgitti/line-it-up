@@ -1,5 +1,6 @@
 import React from "react";
-import {Text, View, StyleSheet, TextInput} from "react-native";
+import {Text, View, StyleSheet, TextInput, Alert} from "react-native";
+import Button from "../components/Button";
 
 
 const Form  : React.FC = () => {
@@ -17,6 +18,7 @@ const Form  : React.FC = () => {
           autoCorrect={false}
         />
       </View>
+      <Button text="Submit" action={() => Alert.alert('Adding a new player')}/>
     </View>
   )
 }
@@ -44,10 +46,12 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
+    marginRight: 10
   },
   label: {
     color: '#000000',
     fontSize: 20,
+    marginLeft: 5,
   }
 })
 
