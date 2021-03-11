@@ -1,14 +1,22 @@
 import React from 'react'
 import {StyleSheet, Text, View} from "react-native";
 import Button from "../components/Button";
+import {StackNavigationProp} from "@react-navigation/stack";
+import {RootStackParamList} from "../types";
 
-const Home: React.FC = () => {
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>
+
+interface HomeProps {
+  navigation: HomeScreenNavigationProp
+}
+
+const Home: React.FC<HomeProps> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
         Line It Up
       </Text>
-      <Button text="Add players"/>
+      <Button text="Add players" action={() => navigation.navigate('Form')}/>
     </View>
   )
 }

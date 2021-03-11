@@ -3,11 +3,12 @@ import {TouchableOpacity, StyleSheet, Alert, Text} from "react-native";
 
 interface ButtonProps {
   text: string
+  action: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
+const Button: React.FC<ButtonProps> = ({ text, action }) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={() =>Alert.alert('Someone wants to create a team')}>
+    <TouchableOpacity style={styles.button} onPress={action}>
       <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   )
