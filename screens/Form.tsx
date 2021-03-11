@@ -1,6 +1,6 @@
-import React from "react";
-import {Text, View, StyleSheet, TextInput, Alert} from "react-native";
-import Button from "../components/Button";
+import React from 'react'
+import {Text, View, StyleSheet, TextInput, Alert} from 'react-native'
+import Button from '../components/Button'
 
 
 const Form  : React.FC = () => {

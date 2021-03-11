@@ -1,0 +1,8 @@
+node_modules
+.expo-shared
+.expo
+.idea
+assets
+.eslintrc.js
+babel.config.js
+components/__tests__/

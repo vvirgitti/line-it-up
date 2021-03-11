@@ -1,5 +1,5 @@
-import React from 'react';
-import {TouchableOpacity, StyleSheet, Alert, Text} from "react-native";
+import React from 'react'
+import {TouchableOpacity, StyleSheet, Text} from 'react-native'
 
 interface ButtonProps {
   text: string
