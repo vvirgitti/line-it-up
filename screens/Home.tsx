@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from 'react-native'
 import Button from '../components/Button'
 import {StackNavigationProp} from '@react-navigation/stack'
 import {RootStackParamList} from '../types'
+import { colours } from '../styles'
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>
 
@@ -24,11 +25,11 @@ const Home: React.FC<HomeProps> = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#375A87',
+    backgroundColor: `${colours.blue}`,
     alignItems: 'center',
   },
   text: {
-    color: '#E6C269',
+    color: `${colours.gold}`,
     fontSize: 40,
     fontWeight: 'bold',
     marginTop: 40

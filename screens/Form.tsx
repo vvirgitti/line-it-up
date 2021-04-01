@@ -2,6 +2,7 @@ import React from 'react'
 import {Text, View, StyleSheet, TextInput, Alert} from 'react-native'
 import Button from '../components/Button'
 import {Picker} from '@react-native-picker/picker'
+import {colours} from '../styles'
 
 
 const Form  : React.FC = () => {
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#ffffff',
+    backgroundColor: `${colours.white}`,
   },
   row: {
     flex: 1,
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   text: {
-    color: '#E6C269',
+    color: `${colours.gold}`,
     fontSize: 20,
     marginTop: 40,
     marginBottom: 40,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   label: {
-    color: '#000000',
+    color: `${colours.black}`,
     fontSize: 20,
     marginLeft: 5,
   }
