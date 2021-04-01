@@ -1,25 +1,49 @@
 import React from 'react'
 import {Text, View, StyleSheet, TextInput, Alert} from 'react-native'
 import Button from '../components/Button'
+import {Picker} from '@react-native-picker/picker'
 
 
 const Form  : React.FC = () => {
-  const [value, onChangeText] = React.useState('')
+  const [name, setName] = React.useState('')
+  const [position, setPosition] = React.useState('')
+  const [gender, setGender] = React.useState('')
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Add your players here</Text>
       <View style={styles.row}>
-        <Text style={styles.label}>Player's name</Text>
+        <Text style={styles.label}>Name</Text>
         <TextInput
           style={styles.input}
-          onChangeText={text => onChangeText(text)}
+          onChangeText={text => setName(text)}
           placeholder={'Derek Jeter'}
-          value={value}
+          value={name}
           autoCorrect={false}
         />
       </View>
-      <Button text="Submit" action={() => Alert.alert(`${value}`)}/>
+      <View style={styles.row}>
+        <Text style={styles.label}>Field position</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={text => setPosition(text)}
+          placeholder={'Shortstop'}
+          value={position}
+          autoCorrect={false}
+        />
+      </View>
+      <View>
+        <Text style={styles.label}>Gender</Text>
+        <Picker
+          selectedValue={gender}
+          onValueChange={(itemValue) => setGender(itemValue)}
+        >
+          <Picker.Item label="Female" value="female"/>
+          <Picker.Item label="Male" value="male"/>
+          <Picker.Item label="Non-binary" value="nonBinary"/>
+        </Picker>
+      </View>
+      <Button text="Submit" action={() => Alert.alert(`${name}, ${position}`)}/>
     </View>
   )
 }
@@ -47,7 +71,8 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
-    marginRight: 10
+    marginRight: 10,
+    paddingLeft: 5,
   },
   label: {
     color: '#000000',

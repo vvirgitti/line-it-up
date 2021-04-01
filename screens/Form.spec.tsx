@@ -9,8 +9,9 @@ describe('Form', () => {
     const spyAlert = jest.spyOn(Alert, 'alert')
 
     fireEvent.changeText(getByPlaceholderText('Derek Jeter'), 'random name')
+    fireEvent.changeText(getByPlaceholderText('Shortstop'), 'pitcher')
     fireEvent.press(getByText('Submit'))
 
-    expect(spyAlert).toHaveBeenCalledWith('random name')
+    expect(spyAlert).toHaveBeenCalledWith('random name, pitcher')
   })
 })
