@@ -14,11 +14,12 @@ const Form  : React.FC = () => {
         <TextInput
           style={styles.input}
           onChangeText={text => onChangeText(text)}
+          placeholder={'Derek Jeter'}
           value={value}
           autoCorrect={false}
         />
       </View>
-      <Button text="Submit" action={() => Alert.alert('Adding a new player')}/>
+      <Button text="Submit" action={() => Alert.alert(`${value}`)}/>
     </View>
   )
 }
