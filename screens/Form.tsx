@@ -3,6 +3,7 @@ import {Text, View, StyleSheet, TextInput, Alert} from 'react-native'
 import Button from '../components/Button'
 import {Picker} from '@react-native-picker/picker'
 import {colours} from '../styles'
+import AlignedInput from '../components/AlignedInput'
 
 
 const Form  : React.FC = () => {
@@ -13,26 +14,18 @@ const Form  : React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Add your players here</Text>
-      <View style={styles.row}>
-        <Text style={styles.label}>Name</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={text => setName(text)}
-          placeholder={'Derek Jeter'}
-          value={name}
-          autoCorrect={false}
-        />
-      </View>
-      <View style={styles.row}>
-        <Text style={styles.label}>Field position</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={text => setPosition(text)}
-          placeholder={'Shortstop'}
-          value={position}
-          autoCorrect={false}
-        />
-      </View>
+      <AlignedInput
+        inputLabel="Name"
+        inputValue={name}
+        setInputValue={setName}
+        placeholder="Derek Jeter"
+      />
+      <AlignedInput
+        inputLabel="Field position"
+        inputValue={position}
+        setInputValue={setPosition}
+        placeholder="Shortstop"
+      />
       <View>
         <Text style={styles.label}>Gender</Text>
         <Picker
@@ -55,25 +48,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: `${colours.white}`,
   },
-  row: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
   text: {
     color: `${colours.gold}`,
     fontSize: 20,
     marginTop: 40,
     marginBottom: 40,
-  },
-  input: {
-    height: 40,
-    width: 200,
-    borderColor: 'gray',
-    borderWidth: 1,
-    borderRadius: 5,
-    marginRight: 10,
-    paddingLeft: 5,
   },
   label: {
     color: `${colours.black}`,
